@@ -1,0 +1,214 @@
+.footer {
+    padding: 160px 0 0;
+    color: $textColorFooter;
+
+    @media screen and (max-width: $MD) {
+        padding: 50px 0 0;
+    }
+
+    &__sides,
+    &__center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__sides {
+        position: relative;
+        padding-top: 94px;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $textColorFooter;
+        }
+
+
+        & .footer__link:not(:first-child) {
+            margin-top: 15px;
+        }
+
+        @media screen and (max-width: $MD) {
+            padding: 0;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: $textColorFooter;
+            }
+        }
+    }
+
+    &__center {
+        margin-top: -113px;
+
+        @media screen and (max-width: $MD) {
+            margin: 0;
+        }
+    }
+
+    &__logo {
+        &-text {
+            text-transform: none;
+            color: $textColorFooter;
+            font-size: 60px;
+            line-height: 1;
+        }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-between;
+        width: 170px;
+        margin-top: 55px;
+    }
+
+    & a {
+        text-decoration: none;
+        display: block;
+
+        &:hover path {
+            fill: $fillHoverSvg;
+            transition: fill .5s ease-in-out;
+        }
+    }
+
+    &__link {
+        text-align: center;
+    }
+
+    &__text {
+        font-size: 14px;
+        letter-spacing: 3.5px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $textColorFooter;
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+        margin-top: 18px;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 2px;
+            height: 55px;
+            position: absolute;
+            top: -130px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: $textColorFooter;
+
+            @media screen and (max-width: $MD) {
+                display: none;
+            }
+        }
+
+        &-wrapp {
+            margin: 0 auto;
+            max-width: 370px;
+        }
+
+        &-title {
+            text-transform: uppercase;
+            color: $tuatara;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 2.65px;
+        }
+
+        &-input,
+        &-btn {
+            outline: none;
+            border: 2px solid $borderColorFooterInput;
+
+            &:focus,
+            &:active {
+                outline: none;
+            }
+        }
+
+        &-input {
+            width: 77%;
+            padding: 18px 30px;
+            border-right: none;
+            position: relative;
+
+            &::placeholder {
+                letter-spacing: 4px;
+            }
+        }
+
+        &-btn {
+            width: 23%;
+            background-color: transparent;
+            border-left: none;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 50px;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: $borderColorFooterInput;
+            }
+
+            &:hover &-psevdo-wrapp {
+                transform: translateX(25px);
+                transition: transform .5s ease-in-out;
+            }
+
+            &-psevdo {
+                &-wrapp {
+                    position: absolute;
+                    width: 25px;
+                    height: 1px;
+                    background-color: $textColorFooter;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%)
+                }
+
+                width: 25px;
+                height: 1px;
+                position: relative;
+                display: block;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    border: 1px solid $textColorFooter;
+                    border-left: none;
+                    border-bottom: none;
+                    top: -4px;
+                    right: 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    &__copirit {
+        font-size: 11px;
+        letter-spacing: 2.5px;
+        text-align: center;
+        color: $textColorFooter;
+        margin-top: 59px;
+    }
+}

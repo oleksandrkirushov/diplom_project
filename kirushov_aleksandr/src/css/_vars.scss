@@ -1,0 +1,118 @@
+//Polygraphy
+
+$default-fonts-name:"Oswald";
+$follbak: Arial,
+Helvetica,
+sans-serif;
+$default-fonts: $default-fonts-name,
+$follbak;
+$default-font-size: 16px;
+$default-line-height: 1.667;
+
+$secondary-fonts-name: "Gotem";
+$secondary-fonts: $secondary-fonts-name,
+$follbak;
+
+$logo-fonts-name: "Shrikhand";
+$logo-fonts: $logo-fonts-name,
+$follbak;
+
+
+//Color
+
+
+$azureRadiance: #00a2ff;
+$bittersweet: #ff6363;
+$black: #000000;
+$bondiBlue: #00afaf;
+$bondiBlue: #0683b4;
+$brightSun: #ffe92f;
+$capeCod: #373e40;
+$chathamsBlue: #194177;
+$cornflowerBlue:#7d5cfa;
+$dodgerBlue: #3686fe;
+$dodgerBlue02: #5474fd;
+$dodgerBlue03: #496bfe;
+$eastBay: #37437a;
+$grey: #b9bcd1;
+$horizon: #5585a2;
+$lightRed: #eb304d;
+$malibu: #70bfff;
+$malibu02: #55B7FF;
+$mercury: #e8e8e8;
+$mineShaft: #262626;
+$mineShaft02:#333333;
+$mineShaft03:#232323;
+$mineShaft03Opacity:rgba(35, 35, 35, .9);
+$outerSpace: #2b2d2d;
+$outrageousOrange: #ff6033;
+$pickledBluewood:#2C4058;
+$red: red;
+$red01:#d62c40;
+$riverBed:#4B5562;
+$scorpion: #5a5a5a;
+$silverOpacity432:rgba(128, 128, 128, 0.432);
+$silverChalice: #9d9d9d;
+$spunPearl:#aaa6bd;
+$waxFlower: #ffc3a9;
+$whisper: #f9f8fb;
+$white: #fff;
+$heliotrope:#7E5AFF;
+$pictonBlue:#2CB3EE;
+$iron:#D5D9DE;
+$host:#c2cad4;
+$norway:#9CB891;
+$geyser:#D6DCE6;
+$midnight:#01183F;
+$springWood: #F7F8F3;
+$bilbao:#248311;
+$cruise:rgba(136, 224, 198, 0.555);
+$apple: #57B846;
+$darkgreen:darkgreen;
+$dingley:#6E774A;
+$tuatara: #1C1C1B;
+$greenMist:#CED6AF;
+$apricot: #ee8c68;
+$seaweed:#2D4216;
+$blizzardBlue: rgba(143, 233, 235, 0.986);
+
+
+
+$textColorWhite: $white;
+$colorBorderHeader: $geyser;
+$colorBeforeMenu:$darkgreen;
+$bgHomeBefore:$midnight;
+$textColorHome: $springWood;
+$bgPopUp:rgba(0, 0, 0, .8);
+$bgBtnPopUp:$apple;
+$bgHoverBtnpopUp:$bilbao;
+$bgInputPopUp:$silverOpacity432;
+$bgHoverInputPopUp:$cruise;
+$bgPopUpCloseX:$riverBed;
+$bgSearch:$seaweed;
+$bgHoverInputSearch:$blizzardBlue;
+$bgHoverBtnSearch:$darkgreen;
+$textColorFooter:$dingley;
+$borderColorFooterInput:$greenMist;
+$fillHoverSvg:$apricot;
+
+$color-4: #eead68;
+$color-3: #eec368;
+$color-2: #eece68;
+$color-1: #eed968;
+$color-5: #ee8c68;
+
+$color: $color-1,
+$color-2,
+$color-3,
+$color-4,
+$color-5;
+
+$defaultBoxShadow: 0 0 3px 2px rgba(0, 0, 0, .35);
+$hoverBoxShadow: 0 0 3px 5px rgba(0, 0, 0, .35);
+
+// Breakpoints
+$verySmall: 350px;
+$bigXL:1368px;
+$SM02:450px;
+$SM03:350px

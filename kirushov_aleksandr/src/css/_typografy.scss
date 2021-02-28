@@ -1,0 +1,15 @@
+.page {
+    font-family: $default-fonts;
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+    font-weight: 400;
+    overflow-x: hidden;
+
+    &__overflow-hidden {
+        overflow: hidden;
+    }
+}
+
+.main {
+    background-color: antiquewhite;
+}

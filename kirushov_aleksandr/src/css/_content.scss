@@ -1,0 +1,83 @@
+.content {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        @media screen and (max-width: $SM) {
+            width: 95%;
+            margin-left: 5%;
+        }
+    }
+
+    &__item {
+        padding: 5px;
+    }
+
+    &__link {
+        display: block;
+        width: 267px;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: $defaultBoxShadow;
+
+        @media screen and (max-width: $XL) {
+            width: 222px;
+            height: 207px;
+        }
+
+        @media screen and (max-width: $LG) {
+            width: 220px;
+            height: 206;
+        }
+
+        @media screen and (max-width: $MD) {
+            width: 160px;
+            height: 150px;
+        }
+
+        @media screen and (max-width: $SM) {
+            width: 127px;
+            height: 118px;
+        }
+
+        &:hover {
+            box-shadow: $hoverBoxShadow;
+        }
+    }
+
+    &__img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+
+    &__openGif {
+        &-wrapp {
+            width: 500px;
+            margin: 0 auto;
+
+            @media screen and (max-width: $SM) {
+                width: 90%;
+                margin-left: 10%;
+            }
+        }
+
+        &-img {
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+.hidden__none {
+    display: none;
+}

@@ -1,0 +1,163 @@
+.menu {
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__list {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        @media screen and (max-width: $MD) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: $bgSearch;
+            visibility: hidden;
+            pointer-events: none;
+            padding: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 50vh;
+            left: 0;
+            text-align: center;
+            border-right: 1px solid $textColorWhite;
+            border-bottom: 1px solid $textColorWhite;
+            transition: all .5s ease-in-out;
+        }
+    }
+
+    &__btn {
+        width: 30px;
+        height: 30px;
+        display: none;
+        position: absolute;
+        top: 12px;
+        left: 45px;
+        z-index: 100;
+
+        @media screen and (max-width: $MD) {
+            display: block;
+        }
+
+        &-line {
+            display: block;
+            position: relative;
+            height: 4px;
+            width: 100%;
+            transition: height 1s ease-in-out;
+            background-color: $textColorWhite;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 13px;
+                height: 4px;
+                width: 100%;
+                background-color: $textColorWhite;
+                transition: transform 1s ease-in-out;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 26px;
+                height: 4px;
+                width: 100%;
+                background-color: $textColorWhite;
+                transition: transform 1s ease-in-out;
+            }
+        }
+    }
+
+    &__input:checked {
+        @media screen and (max-width: $MD) {
+            &~.menu__list {
+                display: flex;
+                visibility: visible;
+                pointer-events: all;
+                opacity: 1;
+                width: 250px;
+                transition: all .5s ease-in-out;
+            }
+
+            &~.menu__btn>span {
+                top: 13px;
+                transform: rotate(45deg);
+                transition: transform 0.5s ease-in-out;
+                visibility: hidden;
+            }
+
+            &~.menu__btn>span::before {
+                top: 0;
+                transform: rotate(180deg);
+                transition: transform 0.5s ease-in-out;
+                visibility: visible;
+            }
+
+            &~.menu__btn>span::after {
+                top: 0;
+                transform: rotate(90deg);
+                transition: transform 0.5s ease-in-out;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__item {
+        @media screen and (max-width: $MD) {
+            border-bottom: 1px solid $textColorWhite;
+            border-top: 1px solid $textColorWhite;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 27px 0;
+        position: relative;
+
+        @media screen and (max-width: $MD) {
+            padding: 0;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $darkgreen;
+            }
+        }
+
+        &:hover:before {
+            visibility: visible;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 141%;
+            background-color: $colorBeforeMenu;
+            visibility: hidden;
+
+            @media screen and (max-width: $MD) {
+                display: none;
+            }
+        }
+
+        &-text {
+            text-transform: uppercase;
+            color: $textColorWhite;
+            letter-spacing: 1px;
+        }
+    }
+}

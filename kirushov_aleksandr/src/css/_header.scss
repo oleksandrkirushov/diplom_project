@@ -1,0 +1,193 @@
+.header {
+
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid $colorBorderHeader;
+    color: $textColorWhite;
+
+    &__wrapp {
+        padding: 0 45px;
+    }
+
+    &__row {
+        margin: 0;
+    }
+
+    &__login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 15px;
+        position: relative;
+
+        &-arrow {
+            position: absolute;
+            animation: bounce 2.5s infinite ease-in-out;
+            top: 50%;
+            right: 0;
+        }
+
+        &-psevdo {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border: 3px solid $textColorWhite;
+                border-right: none;
+                border-bottom: none;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%) rotate(-45deg);
+            }
+        }
+
+        @keyframes bounce {
+
+            from,
+            to {
+                right: 0px;
+            }
+
+            40%,
+            60% {
+                right: 220px;
+            }
+        }
+
+        @media screen and (max-width: $XL) {
+
+            @keyframes bounce {
+
+                from,
+                to {
+                    right: 0px;
+                }
+
+                40%,
+                60% {
+                    right: 190px;
+                }
+            }
+        }
+
+        @media screen and (max-width: $LG) {
+
+            @keyframes bounce {
+
+                from,
+                to {
+                    right: 0px;
+                }
+
+                40%,
+                60% {
+                    right: 150px;
+                }
+            }
+        }
+
+        @media screen and (max-width: $MD) {
+
+            @keyframes bounce {
+
+                from,
+                to {
+                    right: 0px;
+                }
+
+                40%,
+                60% {
+                    right: 140px;
+                }
+            }
+        }
+
+        @media screen and (max-width: $SM) {
+
+            @keyframes bounce {
+
+                from,
+                to {
+                    right: 0px;
+                }
+
+                40%,
+                60% {
+                    right: 80px;
+                }
+            }
+        }
+
+        @media screen and (max-width: $SM02) {
+
+            @keyframes bounce {
+
+                from,
+                to {
+                    right: 0px;
+                }
+
+                40%,
+                60% {
+                    right: 50px;
+                }
+            }
+        }
+
+        @media screen and (max-width: $SM03) {
+
+            @keyframes bounce {
+
+                from,
+                to {
+                    right: 0px;
+                }
+
+                40%,
+                60% {
+                    right: 30px;
+                }
+            }
+        }
+
+        &-link {
+            text-decoration: none;
+            width: 105px;
+            border-left: 1px solid;
+            border-right: 1px solid;
+            border-color: $colorBorderHeader;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: $textColorWhite;
+        }
+
+        &-exit {
+            display: flex;
+            align-items: center;
+
+            &-link {
+                text-align: center;
+
+                @media screen and (max-width: $SM) {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        &-text {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.hidden {
+    visibility: hidden;
+    cursor: none;
+}

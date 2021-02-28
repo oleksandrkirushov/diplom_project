@@ -1,0 +1,42 @@
+@mixin positionCenter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@mixin bgCover($img) {
+    background-image: url($img);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin fontFace($fontFamily, $fontPath, $fontStyle: normal, $fontWeight: normal) {
+    @font-face {
+        font-family: $fontFamily;
+        font-style: $fontStyle;
+        font-weight: $fontWeight;
+        src:url('#{$fontPath}.woff2') format('woff2'),
+        url('#{$fontPath}.woff') format('woff');
+    }
+}
+
+@mixin anim() {
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+        }
+
+        50%,
+        75% {
+            transform: scale(2.5);
+        }
+
+        78%,
+        100% {
+            opacity: 0;
+        }
+    }
+}

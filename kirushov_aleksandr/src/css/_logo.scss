@@ -1,0 +1,19 @@
+.logo {
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__link {
+        display: block;
+        text-decoration: none;
+    }
+
+    &__text {
+        font-family: $default-fonts;
+        font-size: 50px;
+        font-weight: 400;
+        color: $textColorWhite;
+        line-height: 1;
+    }
+}

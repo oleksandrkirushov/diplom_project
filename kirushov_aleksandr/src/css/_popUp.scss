@@ -1,0 +1,175 @@
+.popUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $bgPopUp;
+    z-index: 1000;
+
+    &__wrapp {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 320px;
+        height: 400px;
+        background-color: $textColorWhite;
+        border-radius: 5px;
+        padding: 20px;
+    }
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    &__title {
+        color: $black;
+        font-size: 50px;
+        letter-spacing: 2px;
+        position: relative;
+        margin: 20px 0;
+
+        &::before {
+            content: '';
+            width: 70px;
+            height: 2px;
+            background-color: $black;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    &__login,
+    &__password {
+        padding: 10px;
+        margin-top: 20px;
+        font-size: 20px;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        background-color: $bgInputPopUp;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $bgHoverInputPopUp;
+            transition: border .5s ease-in-out, background-color .5s ease-in-out;
+        }
+    }
+
+    &__login,
+    &__password,
+    &__btn {
+        width: 100%;
+        border-radius: 50px;
+
+        &:hover,
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__btn {
+        height: 30px;
+        background-color: $bgBtnPopUp;
+        border: none;
+        margin-top: 20px;
+
+        &:hover,
+        &:focus {
+            background-color: $bgHoverBtnpopUp;
+            transition: background-color .5s ease-in-out;
+        }
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        color: $dodgerBlue03;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: transform .5s ease-in-out;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+
+        &:hover {
+            background-color: $bgInputPopUp;
+            transition: background-color .4s ease-in-out;
+        }
+
+        &-btn {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 25px;
+                height: 1px;
+                background-color: $bgPopUpCloseX;
+            }
+
+            &::before {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &::after {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+
+    &__hidden {
+        display: none;
+    }
+}
+
+.invalid,
+.invalidReg {
+    color: $red;
+    position: absolute;
+    top: 100px;
+    letter-spacing: 1px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1;
+    font-weight: 300;
+}
