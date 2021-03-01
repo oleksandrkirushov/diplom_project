@@ -4,10 +4,6 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
 
-        @media screen and (max-width: $SM) {
-            width: 95%;
-            margin-left: 5%;
-        }
     }
 
     &__item {
@@ -62,7 +58,6 @@
 
     &__openGif {
 
-
         &-wrapp {
             width: 500px;
             margin: 0 auto;
@@ -76,7 +71,6 @@
 
             @media screen and (max-width: $SM) {
                 width: 90%;
-                margin-left: 10%;
             }
         }
 
@@ -244,10 +238,6 @@
         background-color: $bgPopUp;
         z-index: 1000;
         cursor: pointer;
-
-
-
-
 
         &-img {
             display: block;
