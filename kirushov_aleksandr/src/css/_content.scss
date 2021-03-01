@@ -61,9 +61,18 @@
     }
 
     &__openGif {
+
+
         &-wrapp {
             width: 500px;
             margin: 0 auto;
+            position: relative;
+
+            &:hover .content__openGif-stikerWrapp,
+            &:active .content__openGif-stikerWrapp {
+                opacity: 1;
+                transition: opacity .5s ease-in-out;
+            }
 
             @media screen and (max-width: $SM) {
                 width: 90%;
@@ -71,8 +80,176 @@
             }
         }
 
+        &-title {
+            font-size: 17px;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
         &-img {
             width: 100%;
+            display: block;
+        }
+
+        &-stikerWrapp {
+            position: absolute;
+            bottom: 0;
+            padding: 15px;
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+        }
+
+        &-stiker {
+            position: relative;
+            background-color: $black;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+
+            &:hover:before {
+                animation: NW 1.5s infinite ease-in-out;
+
+                @keyframes NW {
+
+                    from,
+                    to {
+                        transform: translate(0, 0);
+                    }
+
+                    40%,
+                    60% {
+                        transform: translate(-5px, -5px);
+                    }
+                }
+            }
+
+            &:hover:after {
+                animation: NE 1.5s infinite ease-in-out;
+
+                @keyframes NE {
+
+                    from,
+                    to {
+                        transform: rotate(90deg) translate(0, 0);
+                    }
+
+                    40%,
+                    60% {
+                        transform: rotate(90deg) translate(-5px, -5px);
+                    }
+                }
+
+            }
+
+            &:hover .content__openGif-stiker-downLeft {
+                animation: SW 1.5s infinite ease-in-out;
+
+                @keyframes SW {
+
+                    from,
+                    to {
+                        transform: rotate(-90deg) translate(0, 0);
+                    }
+
+                    40%,
+                    60% {
+                        transform: rotate(-90deg) translate(-5px, -5px);
+                    }
+                }
+
+            }
+
+            &:hover .content__openGif-stiker-downRigt {
+                animation: SE 1.5s infinite ease-in-out;
+
+                @keyframes SE {
+
+                    from,
+                    to {
+                        transform: rotate(180deg) translate(0, 0);
+                    }
+
+                    40%,
+                    60% {
+                        transform: rotate(180deg) translate(-5px, -5px);
+                    }
+                }
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                width: 5px;
+                height: 5px;
+            }
+
+            &-downLeft,
+            &-downRigt {
+                width: 8px;
+                height: 8px;
+            }
+
+            &::before,
+            &::after,
+            &-downLeft,
+            &-downRigt {
+                position: absolute;
+                border-top: 3px solid $textColorWhite;
+                border-left: 3px solid $textColorWhite;
+            }
+
+            &::before,
+            &::after {
+                top: 10px;
+            }
+
+            &-downLeft,
+            &-downRigt {
+                bottom: 10px;
+            }
+
+            &::before,
+            &-downLeft {
+                left: 10px;
+            }
+
+            &::after,
+            &-downRigt {
+                right: 10px;
+            }
+
+            &::after {
+                transform: rotate(90deg);
+            }
+
+            &-downRigt {
+                transform: rotate(180deg);
+            }
+
+            &-downLeft {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    &__gifPop {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $bgPopUp;
+        z-index: 1000;
+        cursor: pointer;
+
+
+
+
+
+        &-img {
             display: block;
         }
     }

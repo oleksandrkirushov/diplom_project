@@ -10,6 +10,10 @@
 
     &__wrapp {
         position: relative;
+
+        @media screen and (max-width: $MD02) {
+            width: 80%;
+        }
     }
 
     &__wrapp,
@@ -74,6 +78,8 @@
 .arrow__back {
     position: absolute;
     left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
 
     &-link {
         position: relative;

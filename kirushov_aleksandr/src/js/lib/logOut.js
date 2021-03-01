@@ -4,7 +4,6 @@ function logOut(e) {
     document.cookie = `user=${userName.innerHTML}; max-age=-1`;
     userName.innerHTML = 'LOGIN';
     this.classList.add('hidden');
-    document.body.classList.add('page__overflow-hidden');
     const hiddenArr = [...document.querySelectorAll('.visible')];
     hiddenArr.forEach(function (item, index) {
         hiddenArr[index].classList.add('hidden__none');

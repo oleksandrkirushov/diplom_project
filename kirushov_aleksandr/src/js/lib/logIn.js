@@ -17,11 +17,9 @@ function logIn(e) {
             this[0].style.borderColor = "transparent";
             if (value === password) {
                 const popUp = document.getElementsByClassName('popUp')[0];
-                const body = document.body;
                 const exit = document.getElementsByClassName('header__login-exit-link')[0];
                 const hiddenArr = [...document.querySelectorAll('.visible')];
                 popUp.classList.add('popUp__hidden');
-                body.classList.remove('page__overflow-hidden');
                 exit.classList.remove('hidden');
                 hiddenArr.forEach(function (item, index) {
                     hiddenArr[index].classList.remove('hidden__none');

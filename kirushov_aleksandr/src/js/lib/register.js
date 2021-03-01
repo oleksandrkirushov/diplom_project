@@ -36,6 +36,17 @@ function register(e) {
             const register = document.getElementsByClassName('register')[0];
             logIn.classList.remove('popUp__hidden');
             register.classList.add('popUp__hidden');
+            const popUpforms = [...document.getElementsByClassName('popUp__form')];
+            popUpforms.forEach(function (item, index) {
+                popUpforms[index].reset();
+                popUpforms[index].forEach(function (i, j) {
+                    popUpforms[index][j].style.borderColor = "transparent";
+                });
+            })
+            const invalid = document.getElementsByClassName('invalid')[0];
+            invalid.innerHTML = '';
+            const invalidReg = document.getElementsByClassName('invalidReg')[0];
+            invalidReg.innerHTML = '';
         }
     }
 }

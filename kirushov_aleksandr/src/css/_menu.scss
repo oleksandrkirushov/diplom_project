@@ -84,6 +84,7 @@
                 opacity: 1;
                 width: 250px;
                 transition: all .5s ease-in-out;
+                z-index: 1;
             }
 
             &~.menu__btn>span {

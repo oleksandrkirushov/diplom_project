@@ -1,22 +1,25 @@
 import $ from 'jquery';
 import 'popper.js';
 import search from './lib/search';
-import renderHtml from './lib/renderHtml';
 import openGif from './lib/openGif';
-import saveHistory from './lib/saveHistory';
-import openHistory from './lib/openHistory';
 import logIn from './lib/logIn';
 import register from './lib/register';
 import logOut from './lib/logOut';
 import animateScroll from './lib/animateScroll';
 import checkingCookies from './lib/checkingCookies';
+import magnifierGif from './lib/magnifierGif';
 
 
 checkingCookies();
 
 search('super gifs', 1, 0, 'home__gifs', 0, 4);
+// отправка формы логин
+const formLogIn = document.getElementsByClassName('form__logIn')[0];
+formLogIn.addEventListener('submit', logIn);
 
 search('trending');
+
+
 
 let offset = 0;
 
@@ -32,7 +35,6 @@ searchForm.addEventListener('submit', function (e) {
     const searchTo = document.querySelector('a[href="#search"]');
     animateScroll(searchTo);
     search(searchValue);
-    saveHistory(searchValue);
     offset = 0;
 });
 
@@ -40,12 +42,12 @@ const contentWrapp = document.getElementsByClassName('content__wrapp');
 
 // открытие гифки
 contentWrapp[0].addEventListener('click', function (e) {
+    e.preventDefault();
     let element = e.target;
     if (e.target.nodeName.toLowerCase() === 'img') {
-        e.preventDefault();
         animateScroll(element.parentNode);
-        openGif(element.src);
-        setTimeout(search(element.alt, renderHtml), 5000);
+        openGif(element.src, element.alt);
+        setTimeout(search(element.alt), 5000);
         sessionStorage.setItem('searchValue', element.alt);
         offset = 0;
     }
@@ -83,11 +85,6 @@ setInterval(window.addEventListener('scroll', function () {
     };
 }), 0);
 
-
-// открытие истории поиска
-const searchHistory = document.getElementsByClassName('search__history')[0];
-searchHistory.addEventListener('click', openHistory);
-
 // клик на логин-> открыть popUp
 const loginLink = document.getElementById('header__login-link');
 
@@ -109,9 +106,6 @@ loginLink.addEventListener('click', function (e) {
     invalidReg.innerHTML = '';
 });
 
-// отправка формы логин
-const formLogIn = document.getElementsByClassName('form__logIn')[0];
-formLogIn.addEventListener('submit', logIn);
 
 // закрыть popUp 
 const popUpCloseBtn = [...document.getElementsByClassName('popUp__close')];
@@ -161,4 +155,14 @@ const arrowBackLink = document.querySelector('.arrow__back-link');
 arrowBackLink.addEventListener('click', function (e) {
     e.preventDefault();
     animateScroll(this);
+})
+
+// увеличение гифки
+const contentOpenGif = document.querySelector('.content__openGif');
+contentOpenGif.addEventListener('click', magnifierGif);
+
+// закрытие gifPop
+const gifPop = document.querySelector('.content__gifPop');
+gifPop.addEventListener('click', function (e) {
+    this.classList.add('hidden__none');
 })
