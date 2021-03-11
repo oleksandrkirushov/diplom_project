@@ -12,6 +12,9 @@
 
     &__link {
         display: block;
+        background-image: url(../image/preloader.svg);
+        background-repeat: no-repeat;
+        background-position: center;
         width: 267px;
         height: 250px;
         overflow: hidden;

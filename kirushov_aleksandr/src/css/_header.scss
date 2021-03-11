@@ -21,139 +21,6 @@
         padding: 0 15px;
         position: relative;
 
-        &-arrow {
-            position: absolute;
-            animation: bounce 2.5s infinite ease-in-out;
-            top: 50%;
-            right: 0;
-        }
-
-        &-psevdo {
-            position: relative;
-
-            &::before {
-                content: '';
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                border: 3px solid $textColorWhite;
-                border-right: none;
-                border-bottom: none;
-                top: 50%;
-                right: 0;
-                transform: translateY(-50%) rotate(-45deg);
-            }
-        }
-
-        @keyframes bounce {
-
-            from,
-            to {
-                right: 0px;
-            }
-
-            40%,
-            60% {
-                right: 220px;
-            }
-        }
-
-        @media screen and (max-width: $XL) {
-
-            @keyframes bounce {
-
-                from,
-                to {
-                    right: 0px;
-                }
-
-                40%,
-                60% {
-                    right: 190px;
-                }
-            }
-        }
-
-        @media screen and (max-width: $LG) {
-
-            @keyframes bounce {
-
-                from,
-                to {
-                    right: 0px;
-                }
-
-                40%,
-                60% {
-                    right: 150px;
-                }
-            }
-        }
-
-        @media screen and (max-width: $MD) {
-
-            @keyframes bounce {
-
-                from,
-                to {
-                    right: 0px;
-                }
-
-                40%,
-                60% {
-                    right: 140px;
-                }
-            }
-        }
-
-        @media screen and (max-width: $SM) {
-
-            @keyframes bounce {
-
-                from,
-                to {
-                    right: 0px;
-                }
-
-                40%,
-                60% {
-                    right: 80px;
-                }
-            }
-        }
-
-        @media screen and (max-width: $SM02) {
-
-            @keyframes bounce {
-
-                from,
-                to {
-                    right: 0px;
-                }
-
-                40%,
-                60% {
-                    right: 50px;
-                }
-            }
-        }
-
-        @media screen and (max-width: $SM03) {
-
-            @keyframes bounce {
-
-                from,
-                to {
-                    right: 0px;
-                }
-
-                40%,
-                60% {
-                    right: 30px;
-                }
-            }
-        }
-
         &-link {
             text-decoration: none;
             width: 105px;
@@ -184,6 +51,39 @@
         &-text {
             text-transform: uppercase;
         }
+    }
+}
+
+.login__psevdo {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid $textColorWhite;
+        animation: scaleLog 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+
+        @keyframes scaleLog {
+            0% {
+
+                transform: scale(1);
+            }
+
+            50%,
+            75% {
+
+                transform: scale(3.5);
+            }
+
+            78%,
+            100% {
+                opacity: 0;
+            }
+        }
+
     }
 }
 

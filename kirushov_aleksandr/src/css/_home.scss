@@ -29,31 +29,73 @@
         }
     }
 
+    & .slick-initialized {
+        visibility: visible;
+    }
+
     &__gifs {
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
+        visibility: hidden;
+
+
 
         & .content__link {
             cursor: default;
+            margin: 0 auto;
+            width: 267px;
+            height: 250px;
 
-            @media screen and (max-width: $XL) {
+
+
+            @media screen and (max-width: $LG) {
                 width: 222px;
                 height: 207px;
             }
 
-            @media screen and (max-width: $LG) {
-                width: 162px;
-            }
-
-            @media screen and (max-width: $MD) {
-                width: 117px;
-                height: 109px;
-            }
+            // @media screen and (max-width: $MD) {
+            //     width: 117px;
+            //     height: 109px;
+            // }
 
             &:hover {
                 box-shadow: $defaultBoxShadow;
             }
         }
     }
+
+    & .slick-prev::before {
+        content: url(../image/prevArrow.svg);
+    }
+
+    & .slick-next::before {
+        content: url(../image/nextArrow.svg);
+    }
+
+    & .slick-prev::before,
+    & .slick-next::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    & .slick-prev,
+    & .slick-next {
+        z-index: 10;
+    }
+
+    & .slick-prev {
+        @media screen and (max-width: 1250px) {
+            left: 15px;
+        }
+    }
+
+    & .slick-next {
+        @media screen and (max-width: 1250px) {
+            right: 15px;
+        }
+    }
+
 }

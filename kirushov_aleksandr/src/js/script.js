@@ -8,18 +8,18 @@ import logOut from './lib/logOut';
 import animateScroll from './lib/animateScroll';
 import checkingCookies from './lib/checkingCookies';
 import magnifierGif from './lib/magnifierGif';
+import slickHome from './lib/slider';
 
 
 checkingCookies();
 
-search('super gifs', 1, 0, 'home__gifs', 0, 4);
+slickHome();
+// search('super gifs', 1, 0, 'home__gifs', 0, 4);
 // отправка формы логин
 const formLogIn = document.getElementsByClassName('form__logIn')[0];
 formLogIn.addEventListener('submit', logIn);
 
 search('trending');
-
-
 
 let offset = 0;
 

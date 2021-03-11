@@ -18,12 +18,10 @@ function logIn(e) {
             if (value === password) {
                 const popUp = document.getElementsByClassName('popUp')[0];
                 const exit = document.getElementsByClassName('header__login-exit-link')[0];
-                const hiddenArr = [...document.querySelectorAll('.visible')];
+                const searchWrapp = document.querySelector('.search__container-wrapp');
                 popUp.classList.add('popUp__hidden');
                 exit.classList.remove('hidden');
-                hiddenArr.forEach(function (item, index) {
-                    hiddenArr[index].classList.remove('hidden__none');
-                })
+                searchWrapp.classList.remove('hidden__none');
                 loginLink.innerHTML = userName;
                 this.reset();
                 this[0].style.borderColor = "transparent";
@@ -31,8 +29,7 @@ function logIn(e) {
                 invalid.innerHTML = '';
                 search('trending');
                 document.cookie = `user=${userName}; max-age=86400`;
-                const arrowLogin = document.querySelector(".header__login-arrow");
-                arrowLogin.classList.add('hidden');
+                loginLink.classList.remove('login__psevdo');
             } else if (value !== password) {
                 this[1].style.borderColor = "red";
                 this[0].style.borderColor = "transparent";
