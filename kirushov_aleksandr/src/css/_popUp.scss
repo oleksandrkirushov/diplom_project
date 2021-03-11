@@ -127,8 +127,13 @@
         right: 0;
 
         &:hover {
-            background-color: $bgInputPopUp;
+            background-color: $red;
             transition: background-color .4s ease-in-out;
+        }
+
+        &:hover &-btn::before,
+        &:hover &-btn::after {
+            background-color: $textColorWhite;
         }
 
         &-btn {
@@ -143,7 +148,7 @@
                 top: 50%;
                 left: 50%;
                 width: 25px;
-                height: 1px;
+                height: 2px;
                 background-color: $bgPopUpCloseX;
             }
 
